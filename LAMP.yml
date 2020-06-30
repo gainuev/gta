@@ -1,0 +1,10 @@
+---
+- hosts: webserver
+  tasks:
+  - name: Install LAMP
+    yum: name={{ item }} state=present
+    with_items:
+        - 'php'
+        - 'httpd'
+  - name: install mysql
+    yum: name="mysql-server"
